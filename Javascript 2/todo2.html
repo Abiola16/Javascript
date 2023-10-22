@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+    <style>
+      body{
+        font-family: Arial;
+      }
+      .todo-grid, 
+      .todo-input-grid{
+        display: grid;
+        grid-template-columns: 200px 150px 100px;
+        column-gap: 10px;
+        row-gap: 10px;
+        align-items: center;
+      }
+      .todo-input-grid{
+        margin-bottom: 10px;
+        align-items: stretch;
+      }
+    .name-input,
+    .due-date-input{
+      font-size: 15px;
+      padding: 6px;
+    }
+    .add-todo-button,
+    .delete-todo-button{
+      background-color: green;
+      color: white;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .delete-todo-button{
+      background-color: darkred;
+      padding: 10px 0;
+    }
+    </style>
+</head>
+<body>
+    <p>Todo List</p>
+    <input placeholder="Todo name" class="js-name-input">
+    <button onclick="addTodo();">Add</button>
+    <div class="todo-list"></div>
+
+    <p>Todo List 2</p>
+    <div class="todo-input-grid">
+      <input placeholder="Todo name" class="js-name-input-1 name-input">
+      <input type="date" class="js-due-date-input due-date-input">
+      <button onclick="addTodo2();" class="add-todo-button js-add-todo-button">Add</button>
+    </div>
+    <div class="js-todo-list todo-grid"></div>
+
+    <script>
+      const todoList2 = [{
+        name: 'make dinner',
+        dueDate: '2022-12-22'
+      },
+      {  
+        name: 'make cloth',
+        dueDate: '2022-12-22'
+      }
+    ];
+
+      renderTodoList();
+
+      // document.querySelector('.js-add-todo-button').addEventListener('click', () => {
+      //   addTodo2();
+      // });
+
+      function addTodo2() {
+        const inputElement = document.querySelector('.js-name-input-1');
+        const name = inputElement.value;
+
+        const dateInputElement = document.querySelector('.js-due-date-input');
+        const dueDate = dateInputElement.value;
+
+        todoList2.push({
+          name: name,
+          dueDate: dueDate
+          // or
+          // name,
+          // dueDate
+        });
+        inputElement.value = '';
+        renderTodoList();
+      }
+
+      function renderTodoList() {
+        let todoListHtml = '';
+        
+        todoList2.forEach((todoObject, index) => {
+          const {name, dueDate} = todoObject;  
+          const html = `
+            <div>${name}</div>
+            <div>${dueDate}</div>
+            <button onclick="
+            todoList2.splice(${index}, 1);
+            renderTodoList()
+            " class="delete-todo-button">Delete</button>
+            `;
+          todoListHtml += html;
+        });
+        document.querySelector('.js-todo-list').innerHTML = todoListHtml;
+      }
+    </script>
+ 
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Add to cart</h3>
+    <button onclick="
+    cart
+    displayCartQuantity(first);
+    ">Show cart</button>
+    <p class="cart-quantity"></p>
+
+    <button onclick="cart+=1
+    displayCartQuantity(second);
+    ">Add to cart</button>
+    <p class="cart-quantity"></p>
+    
+    <button onclick="cart+=2
+    displayCartQuantity2();">Add to cart +2</button>
+    <p class="cart-quantity2"></p>
+    
+    <button onclick="cart = 0
+    displayCartQuantity3();
+    ">Reset cart</button>
+    <p class="cart-quantity3"></p>
+
+    <script>
+        // let cart  = 0;
+
+        // function displayCartQuantity() {
+        //    const show  = document.querySelector('.cart-quantity');
+
+        //    if (show.innerHTML === ''){
+        //     show.innerHTML = `Cart quantity: ${cart}`
+        //    } else if (show.innerHTML === `Cart quantity: ${cart}`) {
+        //     show.innerHTML = ''
+        //    }
+        // }
+        // function displayCartQuantity1() {
+        //    const show  = document.querySelector('.cart-quantity1');
+
+        //    if (show.innerHTML === ''){
+        //     show.innerHTML = 'Added to cart'
+        //    }
+        // }
+        // function displayCartQuantity2() {
+        //    const show  = document.querySelector('.cart-quantity2');
+
+        //    if (show.innerHTML === ''){
+        //     show.innerHTML = 'Added to cart +2'
+        //    }
+        // }
+        // function displayCartQuantity3() {
+        //    const show  = document.querySelector('.cart-quantity3');
+
+        //    if (show.innerHTML === ''){
+        //     show.innerHTML = `Cart has been reset ${cart}`
+        //    } else if (show.innerHTML === `Cart has been reset ${cart}`) {
+        //     show.innerHTML = ''
+        //    }
+        // }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Button Changed</title>
+</head>
+<body>    
+    <h3>Youtube Subscribe Button</h3>
+    <button class="youtube-button" onclick="youtubeButtonChanged();">Subscribe</button>
+
+    <style>
+        .youtube-button{
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            border: 0; 
+        }
+        .is-subscribed {
+            background-color: rgb(240, 240, 240);
+            color: black;
+        }
+    </style>
+    <script>
+        function youtubeButtonChanged() {
+            const buttonElement = document.querySelector('.youtube-button');
+
+            // if (buttonElement.innerHTML === 'Subscribe') {
+            //     buttonElement.innerHTML = 'Subscribed'
+            // } else if(buttonElement.innerHTML === 'Subscribed') {
+            //     buttonElement.innerHTML = 'Subscribe';
+            // }
+
+            // do this instead      if they are spaces
+            if (buttonElement.innerText === 'Subscribe') {
+                buttonElement.innerHTML = 'Subscribed';
+                buttonElement.classList.add('is-subscribed');
+            } else if(buttonElement.innerHTML === 'Subscribed') {
+                buttonElement.innerHTML = 'Subscribe';
+                buttonElement.classList.remove('is-subscribed');
+            }
+        }
+    </script>
+
+
+    <!-- <script>
+        // console.log(document.title = "mujeeb");
+        // console.log(document.body); 
+        // console.log(document.body.innerHTML = "remove everthing in the body with this text"); 
+        // console.log(document.body.innerHTML = "<button title ='mujeeb'>Mujeeb</button>"); 
+
+        console.log(document.querySelector('button').innerHTML);
+        document.querySelector('button').innerHTML = 'changed';
+
+       const buttonElement =  document.querySelector('.js-button').innerHTML = "mumu";
+       console.log(buttonElement); 
+        // document.querySelector('#js-button1').innerHTML = "ode";
+
+        // document.body.innerHTML = "mujeeb";
+        // document.title = "good job";
+    </script> -->
+</body>
+</html>

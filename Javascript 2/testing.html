@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Helvetica;
+        }
+
+        body {
+            background-color: rgb(25, 25, 25);
+        }
+
+        h2 {
+            padding-top: 80px;
+            text-align: center;
+            color: #fff;
+        }
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+    .subscribe {
+        padding: 12px 30px;
+        border: none;
+        background-color: #fff;
+        border-radius: 18px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .youtube {
+        transition: .4s ease-in-out;
+        transform: scale(1.1);
+    }
+    </style> -->
+</head>
+
+<body>
+    <!-- <H2>Youtube Subscribe Button</H2>
+    <div>
+        <button onclick="changeYoutubeButton();" class="subscribe">Subscribe</button>
+    </div> -->
+
+    <h3>Todo list</h3>
+    <input placeholder="Todo" class="input">
+    <button onclick="addTodo();">Add</button>
+    <div class="show-todo">
+    </div>
+
+    <script>
+        const todoList  = [];
+        function addTodo() {
+            const inputElement = document.querySelector('.input');
+            const todo = inputElement.value;
+            let number = 1;
+            
+            todoList.push(todo);
+            number += 1
+
+            inputElement.value = '';
+            console.log(todoList);
+                        
+            // showTodo();
+            const showTodo = document.querySelector('.show-todo');
+            showTodo.innerHTML = `<p>${number} ${todoList}</p>`
+        }  
+    </script>
+
+</body>
+
+<script>
+    function changeYoutubeButton() {
+        const buttonElement  = document.querySelector('.subscribe');
+        if (buttonElement.innerText === 'Subscribe') {
+            buttonElement.innerHTML = 'Subscribed'
+            buttonElement.classList.add('youtube')
+        } else if (buttonElement.innerHTML === 'Subscribed') {
+            buttonElement.innerHTML = 'Subscribe'
+            buttonElement.classList.remove('youtube')
+        }
+    }
+    // console.log(changeYoutubeButton());
+</script>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light and Dark mode</title>
+</head>
+<style> 
+    body{
+        color:black ;
+        background-color: white;
+        /* transition: .1s ease-in-out; */
+    }
+    
+    .dropdown{
+        position: relative;
+        display: inline-block;
+        margin-top: 20px;
+}
+    .links{
+        display: none;
+        position: absolute;
+        background-color: #000;
+        min-width: 160px;
+        z-index: 1;
+        margin-top: 20px;
+    }
+    .links a{
+        display: flex;
+    }
+    .dropdown:hover .links{
+        display: block; 
+    }
+</style>
+<body class="body">
+    <h3>
+        xmdcdcdnc
+    </h3>
+    <p>
+        mujeeb
+    </p>
+    <div class="dropdown">
+        <div class="links">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+        <button class="hover">Hover</button>
+    </div>
+    <button class="button" onclick="darkMode();">Light</button>
+    <script>
+        function darkMode() {
+            const body = document.querySelector('body');
+            const button = document.querySelector('.button');
+            if (button.innerText === 'Light'){
+                button.innerHTML = 'Dark'
+                document.body.style.backgroundColor = '#000'
+                document.body.style.color = '#fff'
+                // document.body.button.style.backgroundImage = '';
+                
+            } else if (button.innerHTML === 'Dark') {
+                button.innerHTML = 'Light'
+                document.body.style.backgroundColor = '#FFF'
+                document.body.style.color = '#000'
+                // document.body.button.style.backgroundImage = ''; 
+            } 
+        }
+    </script>
+</body>
+</html>  
